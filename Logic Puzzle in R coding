@@ -1,0 +1,74 @@
+
+# Question 1 
+### Luke has blue and red balls. Every day he wins 2 blue balls and looses 3 red ones.
+### After 5 days he has the same amount of blue and red balls.
+### After 9 days he has Twice as many blue balls as red balls.
+### How many red balls did he have at the beginning?
+This function now starts with twice as many blue balls as red ones, goes back 4 days, and checks if the red and blue balls are equal. If they are, it continues with the remaining 5 days to check if the blue balls are twice the red balls. If not, it continues with the next starting number.
+
+```{r}
+for (i in 1:100) {
+ 
+  red=i
+  blue=2*i
+  
+     for (j in 1:4){
+      blue=blue-2 
+      red=red+3
+     }   
+   
+  if (blue==red) {
+     for (k in 1:5){
+      blue=blue-2 
+      red=red+3
+     } 
+  print(paste0("Initial red ", red))
+  print(paste0("Initial blue ", blue))
+  break 
+  }
+}
+```
+
+[1] "Initial red 47"
+[1] "Initial blue 22"
+
+Verification
+```{r}
+red=47
+blue=22
+
+for (i in 1:9){
+  red=red-3
+  blue=blue+2
+  print(paste0("Day #", i))
+  print(paste0("Red balls ", red))
+  print(paste0("Blue balls ", blue))
+}
+```
+[1] "Day #1"
+[1] "Red balls 44"
+[1] "Blue balls 24"
+[1] "Day #2"
+[1] "Red balls 41"
+[1] "Blue balls 26"
+[1] "Day #3"
+[1] "Red balls 38"
+[1] "Blue balls 28"
+[1] "Day #4"
+[1] "Red balls 35"
+[1] "Blue balls 30"
+[1] "Day #5"
+[1] "Red balls 32"
+[1] "Blue balls 32"
+[1] "Day #6"
+[1] "Red balls 29"
+[1] "Blue balls 34"
+[1] "Day #7"
+[1] "Red balls 26"
+[1] "Blue balls 36"
+[1] "Day #8"
+[1] "Red balls 23"
+[1] "Blue balls 38"
+[1] "Day #9"
+[1] "Red balls 20"
+[1] "Blue balls 40"
